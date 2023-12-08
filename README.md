@@ -7,7 +7,6 @@ A simple calendar application that allows a user to save events for each hour of
 - [Features](#features)
 - [How to Use](#how-to-use)
 - [Screenshots](#screenshots)
-- [License](#license)
 
 ## Full Description
 
@@ -37,4 +36,4 @@ URL of deployed app:  https://feliperyder.github.io/planner-app/
 
 ## Screenshot
 
-![Code Quiz Screenshot](./assets/planner-app-screenshot.png)
+![Planner App Screenshot](./assets/planner-app-screenshot.png)
