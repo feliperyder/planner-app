@@ -13,16 +13,27 @@ $(document).ready(function () {
     // Loop thorugh hours
     for (var hour = 9; hour <= 17; hour++)
         // create new time block element
-      var timeBlock = 
+      var timeBlock = $("<div>")
+      .addclass("row time-blovk");
         //create hour element
-      var hourElement = 
+      var hourElement = $("<div>")
+      .addclass("col-md-1 hour")
+      .txt(dayjs().hour(hour).format("hA"));
         //Create text area for event details text to be inputted
-      var eventDetails = 
+      var eventDetails = $("<textarea>")
+      .addclass("col-md-15 description);
+      (</textarea>)
       
     // Set a class for Color coded time block depending on; past, present, or future
+    eventDetails.addClass(
+        hour < dayjs().hour() ? "past" : hour === dayjs().hour() ? "present" : "future"
+      );
 
     // Create Save button
-
+    var saveBtn = $("<button>")
+    .addClass("col-md-1 saveBtn")
+    .append($("<i>").addClass("fas fa-save"));
+    
     // Append elements to the time block
 
     // Append the time block to the container with class 'container'
