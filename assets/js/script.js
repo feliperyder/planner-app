@@ -2,7 +2,13 @@ $(document).ready(function () {
 
     // Event Listeners
     $(".saveBtn").on("click", function () {
-    }
+        // Get the text input and the corresponding hour
+    var eventText = $(this).siblings(".description").val();
+    var eventHour = $(this).siblings(".hour").text();
+        // Save event to local storage
+    localStorage.setItem(eventHour, eventText);
+    });
+
     // Display current day at the top of the calendar
     $("#currentDay").text(dayjs().format("dddd, MMMM D, YYYY [at] hh:mm A "));
 
@@ -33,18 +39,23 @@ $(document).ready(function () {
     var saveBtn = $("<button>")
     .addClass("col-md-1 saveBtn")
     .append($("<i>").addClass("fas fa-save"));
-    
+
     // Append elements to the time block
-
+timeBlock.append(hourElement, eventDetails, saveBtn)
     // Append the time block to the container with class 'container'
+container.append(timeBlock);
+}
+})
 
-    // Save event to local storage
-    localStorage.setItem(eventHour, eventText);
+createTimeBlock();
 
     // Load events from local storage
       function loadEvents() {
-
+$(".time-block").each(function () {
+      var hour = $(this).find(".hour").text();
+      var savedEvent = localStorage.getItem(hour);
       }
+      
       // Call the function to load events
       loadEvents();
     });
