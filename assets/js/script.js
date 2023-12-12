@@ -12,7 +12,7 @@ $(document).ready(function () {
     // Event Listener for clear button
     var clearBtn = $("<button>")
       .addClass("btn btn-danger mt-3")
-      .text("Fully clear Schedule")
+      .text("Clear all event details")
       .on("click", function () {
         // Clear the local storage
         localStorage.clear();
@@ -21,7 +21,7 @@ $(document).ready(function () {
       });
   
     // Display current day at the top of the calendar
-    $("#currentDay").text(dayjs().format("dddd, MMMM D, YYYY [at] hh:mm A"));
+    $("#currentDay").text(dayjs().format("dddd D MMMM YYYY [,] hh:mm A"));
   
     // Function to create time blocks for 9am-5pm
     function createTimeBlock() {
